@@ -1,0 +1,14 @@
+.buttonWithBorder {
+  border: 1px solid var(--white);
+  background: transparent;
+}
+
+.buttonWithFill {
+  border: 1px solid var(--blue);
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
