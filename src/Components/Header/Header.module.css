@@ -1,0 +1,57 @@
+.headerContainer {
+  padding: 2.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  position: relative;
+}
+
+.logo::after {
+  content: "";
+  width: 43px;
+  height: 2px;
+  background: var(--blue);
+  position: absolute;
+  bottom: -28px;
+  left: 0px;
+  margin-top: 50px;
+}
+
+.menu {
+  display: flex;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li + li {
+  margin-left: 3.4rem;
+}
+
+.menu li:nth-child(1)::after,
+.menu li:nth-child(2)::after {
+  content: "";
+  width: 10px;
+  height: 5px;
+  display: block;
+  background: url("../../assets/arrow.svg") no-repeat center center;
+  position: absolute;
+  top: 42%;
+  right: -20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 1.6rem;
+}
