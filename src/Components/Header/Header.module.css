@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 }
 
 .leftHeader {
@@ -46,8 +47,24 @@
   cursor: pointer;
 }
 
+.menu li svg {
+  transition: 0.3s;
+}
+
+.menu li.arrowActive svg {
+  transform: rotate(180deg);
+}
+
+.menu li.arrowActive svg path {
+  stroke: var(--blue);
+}
+
 .menu li + li {
   margin-left: 3.4rem;
+}
+
+.menu li {
+  user-select: none;
 }
 
 .menu li:nth-child(1) > svg,
@@ -62,17 +79,6 @@
 .menu.ativo li:nth-child(1) > svg {
   transform: rotate(180deg);
 }
-/* .menu li:nth-child(1)::after,
-.menu li:nth-child(2)::after {
-  content: "";
-  width: 10px;
-  height: 5px;
-  display: block;
-  background: url("../../assets/arrow.svg") no-repeat center center;
-  position: absolute;
-  top: 42%;
-  right: -20px;
-} */
 
 .header {
   display: flex;
@@ -113,3 +119,15 @@
     display: none;
   }
 }
+
+/* .menu li:nth-child(1)::after,
+.menu li:nth-child(2)::after {
+  content: "";
+  width: 10px;
+  height: 5px;
+  display: block;
+  background: url("../../assets/arrow.svg") no-repeat center center;
+  position: absolute;
+  top: 42%;
+  right: -20px;
+} */

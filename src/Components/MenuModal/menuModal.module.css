@@ -1,0 +1,31 @@
+.menuModalContainer {
+  background: linear-gradient(
+    45deg,
+    #020203 0%,
+    rgba(14, 17, 23, 0.92) 96.35%,
+    rgba(14, 17, 23, 0.9) 100%
+  );
+  backdrop-filter: blur(6px);
+  width: 100%;
+  height: 64rem;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform: translateY(-640px);
+  transition: 0.3s;
+}
+
+.menuModalContainer.modalActive {
+  transform: translateY(0px);
+}
+
+.menuModalFooter {
+  background: var(--neutral-300);
+  width: 100%;
+  height: 7rem;
+  position: fixed;
+  bottom: 0;
+}
+
+.menuModal {
+}
