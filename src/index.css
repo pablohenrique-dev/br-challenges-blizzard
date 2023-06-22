@@ -23,14 +23,17 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background: #000;
-}
-
 .container {
   width: 100%;
-  max-width: 1313px;
+  max-width: 1403px;
   margin: 0 auto;
+  padding: 0 45px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
 }
 
 button {

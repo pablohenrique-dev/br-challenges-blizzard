@@ -4,7 +4,6 @@ import Banner from "./Components/Banner/Banner";
 import imgBanner1 from "./assets/banner-1.jpg";
 import imgBanner2 from "./assets/banner-2.jpg";
 import imgBanner3 from "./assets/banner-3.jpg";
-import Teste from "./Components/Teste";
 import Header from "./Components/Header/Header";
 
 const banners = [
@@ -32,7 +31,7 @@ function App() {
   return (
     <>
       <Header />
-      {/* {banners.map((banner) => (
+      {banners.map((banner) => (
         <Banner
           key={banner.id}
           img={banner.img}
@@ -40,7 +39,6 @@ function App() {
           text={banner.text}
         />
       ))}
-      <Teste /> */}
     </>
   );
 }

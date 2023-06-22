@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ text, icon, hasFill }) => {
+const ComponentButton = ({ text, icon, hasFill }) => {
   return (
     <>
       <button
@@ -14,4 +14,4 @@ const Button = ({ text, icon, hasFill }) => {
   );
 };
 
-export default Button;
+export default ComponentButton;

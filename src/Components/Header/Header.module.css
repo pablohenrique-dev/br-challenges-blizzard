@@ -1,6 +1,22 @@
 .headerContainer {
-  padding: 2.8rem 0;
+  padding: 2.8rem 0 2.6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.leftHeader {
+  display: flex;
+  align-items: center;
+  gap: 12.1rem;
+}
+
+.rightHeader {
+  display: flex;
+  align-items: center;
+  gap: 74px;
 }
 
 .logo {
@@ -27,13 +43,26 @@
 
 .menu li {
   position: relative;
+  cursor: pointer;
 }
 
 .menu li + li {
   margin-left: 3.4rem;
 }
 
-.menu li:nth-child(1)::after,
+.menu li:nth-child(1) > svg,
+.menu li:nth-child(2) > svg {
+  margin-left: 1.4rem;
+}
+
+.header .hamburguerBtn {
+  display: none;
+}
+
+.menu.ativo li:nth-child(1) > svg {
+  transform: rotate(180deg);
+}
+/* .menu li:nth-child(1)::after,
 .menu li:nth-child(2)::after {
   content: "";
   width: 10px;
@@ -43,7 +72,7 @@
   position: absolute;
   top: 42%;
   right: -20px;
-}
+} */
 
 .header {
   display: flex;
@@ -54,4 +83,33 @@
 .btnContainer {
   display: flex;
   gap: 1.6rem;
+}
+
+@media (max-width: 1130px) {
+  .leftHeader nav {
+    display: none;
+  }
+
+  .header .hamburguerBtn {
+    border: none;
+    background: transparent;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-end !important;
+    gap: 9px;
+    padding-right: 0;
+    cursor: pointer;
+  }
+
+  .header .hamburguerBtn > div {
+    width: 28px;
+    height: 2px;
+    background: var(--white);
+  }
+}
+
+@media (max-width: 800px) {
+  .btnContainer {
+    display: none;
+  }
 }
