@@ -55,7 +55,7 @@
   transform: rotate(180deg);
 }
 
-.menu li.arrowActive svg path {
+.menu li.arrowActive a > svg path {
   stroke: var(--blue);
 }
 
@@ -67,8 +67,8 @@
   user-select: none;
 }
 
-.menu li:nth-child(1) > svg,
-.menu li:nth-child(2) > svg {
+.menu li:nth-child(1) a > svg,
+.menu li:nth-child(2) a > svg {
   margin-left: 1.4rem;
 }
 

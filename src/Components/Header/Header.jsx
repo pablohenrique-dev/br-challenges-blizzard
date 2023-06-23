@@ -26,34 +26,72 @@ const modal = {
 };
 
 const Header = () => {
-  const [active, setActive] = React.useState(false);
-  const [contentModal, setContentModal] = React.useState([]);
+  const [activeModal, setActiveModal] = React.useState(false);
   const [nameModal, setNameModal] = React.useState("");
+  // const [textClassName, setTextClassName] = React.useState("");
+  const [aux, setAux] = React.useState({
+    jogos: 0,
+    esportes: 0,
+  });
 
-  function handleClick({ target }) {
-    const textEvent = target.innerText.toLowerCase();
+  const handleClick = (e) => {
+    // console.log(e.target);
+    let liClassName = e.currentTarget.className.trim();
+    let arrayClassName = liClassName.split(" ");
+    let onlyFirstLiClassName = arrayClassName[0];
 
-    setNameModal(textEvent);
-    setContentModal(modal[textEvent]);
+    if (activeModal) {
+      // console.log(onlyFirstLiClassName, activeModal);
+      // console.log(aux);
+      switch (onlyFirstLiClassName) {
+        case "jogos":
+          aux.jogos++;
+          if (aux.esportes > 0) {
+            aux.esportes--;
+          }
+          setNameModal(liClassName);
+          if (aux.jogos > 1) {
+            setActiveModal(!activeModal);
+            aux.jogos = 0;
+            // console.log(aux);
+          }
+          break;
 
-    // console.log(contentModal);
-    // if(nameModal === contentModal){
-    //   setActive(true)
-    // }
+        case "esportes":
+          aux.esportes++;
+          if (aux.jogos > 0) {
+            aux.jogos--;
+          }
+          setNameModal(liClassName);
+          if (aux.esportes > 1) {
+            setActiveModal(!activeModal);
+            aux.esportes = 0;
+            // console.log(aux);
+          }
+          break;
 
-    // setContentModal(modal[target.innerText.toLowerCase()]);
+        default:
+          break;
+      }
+    } else {
+      switch (onlyFirstLiClassName) {
+        case "jogos":
+          aux.jogos++;
+          setActiveModal(!activeModal);
+          setNameModal(liClassName);
+          break;
 
-    // if (target.innerText.toLowerCase() === "jogos") {
-    //   setNameModal((arrowActive) => "jogos");
-    //   setActive(!active);
-    // } else if (target.innerText.toLowerCase() !== "jogos") {
-    //   setActive(active);
-    // }
-    // if (target.innerText.toLowerCase() === "esportes") {
-    //   setArrowActive((arrowActive) => "esportes");
-    //   setActive(!active);
-    // }
-  }
+        case "esportes":
+          aux.esportes++;
+          setActiveModal(!activeModal);
+          setNameModal(liClassName);
+          break;
+
+        default:
+          break;
+      }
+    }
+  };
 
   return (
     <header className={styles.headerContainer}>
@@ -66,21 +104,35 @@ const Header = () => {
             <ul className={styles.menu}>
               <li
                 onClick={handleClick}
-                className={nameModal === "jogos" ? styles.arrowActive : ""}
+                className={`jogos ${
+                  nameModal === "jogos" ? styles.arrowActive : ""
+                }`}
               >
-                Jogos
-                <Arrow />
+                <a href="#">
+                  Jogos
+                  <Arrow />
+                </a>
               </li>
               <li
                 onClick={handleClick}
-                className={nameModal === "esportes" ? styles.arrowActive : ""}
+                className={`esportes ${
+                  nameModal === "esportes" ? styles.arrowActive : ""
+                }`}
               >
-                Esportes
-                <Arrow />
+                <a href="#">
+                  Esportes
+                  <Arrow />
+                </a>
               </li>
-              <li>Loja</li>
-              <li>Notícias</li>
-              <li>Suporte</li>
+              <li>
+                <a href="#">Loja</a>
+              </li>
+              <li>
+                <a href="#">Notícias</a>
+              </li>
+              <li>
+                <a href="#">Suporte</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -91,17 +143,16 @@ const Header = () => {
             <ComponentButton text="Logar" icon={<Logar />} hasFill={true} />
           </div>
 
-          <button
-            onClick={() => setActive(!active)}
-            className={`${styles.hamburguerBtn} ${active ? styles.active : ""}`}
-          >
+          <button className={`${styles.hamburguerBtn}`}>
             <div></div>
             <div></div>
             <div></div>
           </button>
         </div>
       </div>
-      <MenuModal contentModal={contentModal} active={active} />
+
+      <MenuModal activeModal={activeModal} />
+      {/* <MenuModal contentModal={contentModal} active={activeModal} /> */}
     </header>
   );
 };
