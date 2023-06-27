@@ -6,43 +6,22 @@ import Logar from "../Icons/Logar";
 import Arrow from "../Icons/Arrow";
 import MenuModal from "../MenuModal/MenuModal";
 
-const modal = {
-  jogos: [
-    {
-      id: 1,
-      name: "Diablo",
-    },
-    {
-      id: 2,
-      name: "CSGO",
-    },
-  ],
-  esportes: [
-    {
-      id: 1,
-      name: "Futebol",
-    },
-  ],
-};
-
 const Header = () => {
   const [activeModal, setActiveModal] = React.useState(false);
   const [nameModal, setNameModal] = React.useState("");
-  // const [textClassName, setTextClassName] = React.useState("");
+  const [nameContentModal, setNameContentModal] = React.useState("");
   const [aux, setAux] = React.useState({
     jogos: 0,
     esportes: 0,
   });
 
   const handleClick = (e) => {
-    // console.log(e.target);
     let liClassName = e.currentTarget.className.trim();
     let arrayClassName = liClassName.split(" ");
     let onlyFirstLiClassName = arrayClassName[0];
+    setNameContentModal(onlyFirstLiClassName);
 
     if (activeModal) {
-      // console.log(onlyFirstLiClassName, activeModal);
-      // console.log(aux);
       switch (onlyFirstLiClassName) {
         case "jogos":
           aux.jogos++;
@@ -53,7 +32,6 @@ const Header = () => {
           if (aux.jogos > 1) {
             setActiveModal(!activeModal);
             aux.jogos = 0;
-            // console.log(aux);
           }
           break;
 
@@ -66,7 +44,6 @@ const Header = () => {
           if (aux.esportes > 1) {
             setActiveModal(!activeModal);
             aux.esportes = 0;
-            // console.log(aux);
           }
           break;
 
@@ -151,8 +128,10 @@ const Header = () => {
         </div>
       </div>
 
-      <MenuModal activeModal={activeModal} />
-      {/* <MenuModal contentModal={contentModal} active={activeModal} /> */}
+      <MenuModal
+        activeModal={activeModal}
+        nameContentModal={nameContentModal}
+      />
     </header>
   );
 };

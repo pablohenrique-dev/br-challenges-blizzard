@@ -7,16 +7,87 @@
   );
   backdrop-filter: blur(6px);
   width: 100%;
-  height: 64rem;
   position: absolute;
   top: 0;
   z-index: -1;
-  transform: translateY(-640px);
   transition: 0.3s;
+}
+
+.menuModalContainer.menuModalJogos {
+  transform: translateY(-640px);
+  height: 64rem;
+}
+
+.menuModalContainer.menuModalEsportes {
+  transform: translateY(-520px);
+  height: 49.7rem;
 }
 
 .menuModalContainer.modalActive {
   transform: translateY(0px);
+}
+
+.menuModal ul {
+  display: grid;
+  justify-items: center;
+  animation: display 1s forwards;
+  opacity: 0;
+}
+
+.menuModalJogos .menuModal ul {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3.2rem;
+  padding-top: 13.5rem;
+  padding-bottom: 5.5rem;
+}
+
+.menuModalEsportes .menuModal ul {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6.4rem;
+  padding-top: 14.5rem;
+}
+
+.menuModalJogos .menuModal ul li {
+  padding: 3.2rem 3.6rem;
+  text-align: center;
+  width: 17.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menuModalEsportes .menuModal ul li {
+  padding-bottom: 3.1rem;
+  text-align: center;
+  width: 17.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menuModal ul li img {
+  width: 7rem;
+}
+
+.menuModalEsportes .menuModal ul li img {
+  width: 17.4rem;
+  height: 14.9rem;
+}
+
+@keyframes display {
+  to {
+    opacity: initial;
+  }
+}
+
+.menuModal ul li p {
+  font-size: 1.4rem;
+  font-family: "Inter", sans-serif;
+  color: #9d9d9d;
+  margin-top: 0.8rem;
+  line-height: 150%;
 }
 
 .menuModalFooter {
@@ -25,7 +96,26 @@
   height: 7rem;
   position: fixed;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.menuModal {
+.menuModalFooter ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6.4rem;
+}
+
+.menuModalFooter ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuModalFooter ul li p {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 600;
 }

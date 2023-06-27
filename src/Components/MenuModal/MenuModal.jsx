@@ -19,6 +19,11 @@ import CampeonatoMundialdeArenaWoWLogo from "../../assets/logosModalMenu/Campeon
 import StarCraftIIWCSLogo from "../../assets/logosModalMenu/StarCraft-II-WCS.png";
 import CopaMundialdeOverwatchLogo from "../../assets/logosModalMenu/Copa-Mundial-de-Overwatch.png";
 import LigaDeOverwatchLogo from "../../assets/logosModalMenu/Liga-de-Overwatch.png";
+import AllGames from "../Icons/AllGames";
+import Blizzard from "../Icons/Blizzard";
+import Download from "../Icons/Download";
+import Chat from "../Icons/Chat";
+import Torneio from "../Icons/Torneio";
 
 const MenuModal = ({ nameContentModal, activeModal }) => {
   const modal = {
@@ -121,6 +126,11 @@ const MenuModal = ({ nameContentModal, activeModal }) => {
     <section
       className={`${styles.menuModalContainer} ${
         activeModal ? styles.modalActive : ""
+      } 
+      ${
+        nameContentModal === "jogos"
+          ? styles.menuModalJogos
+          : styles.menuModalEsportes
       }`}
     >
       <div className={`${styles.menuModal} container`}>
@@ -140,7 +150,35 @@ const MenuModal = ({ nameContentModal, activeModal }) => {
           </ul>
         ) : null}
       </div>
-      <div className={styles.menuModalFooter}></div>
+      <div className={styles.menuModalFooter}>
+        {nameContentModal === "jogos" ? (
+          <ul>
+            <li>
+              <AllGames />
+              <p>Ver todos jogos</p>
+            </li>
+            <li>
+              <Blizzard />
+              <p>Aplicativo Battle.net</p>
+            </li>
+            <li>
+              <Download />
+              <p>Downloads</p>
+            </li>
+            <li>
+              <Chat />
+              <p>Fóruns dos jogos</p>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <Torneio />
+              <p>Torneios da comunidade</p>
+            </li>
+          </ul>
+        )}
+      </div>
     </section>
   );
 };
