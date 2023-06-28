@@ -118,10 +118,6 @@ const MenuModal = ({ nameContentModal, activeModal }) => {
     ],
   };
 
-  React.useEffect(() => {
-    console.log(nameContentModal);
-  }, [nameContentModal]);
-
   return (
     <section
       className={`${styles.menuModalContainer} ${

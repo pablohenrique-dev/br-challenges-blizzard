@@ -1,0 +1,33 @@
+.bannerContainer {
+  background-position: 0% 0%;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  color: white;
+}
+
+.text {
+  color: white;
+}
+
+.iconMenuBanner button {
+  padding: 0px;
+}
+
+.iconMenuBanner button img {
+  filter: grayscale(1);
+}
+
+.iconMenuBannerActive button img {
+  filter: grayscale(0);
+}
+
+.iconMenuBanner button:disabled {
+  cursor: wait;
+}
