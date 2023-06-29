@@ -12,3 +12,9 @@
   padding-left: 2.6rem;
   padding-right: 2.6rem;
 }
+
+.buttonBanner {
+  font-weight: 600;
+  padding: 1.4rem 3.2rem;
+  font-size: 1.6rem;
+}
