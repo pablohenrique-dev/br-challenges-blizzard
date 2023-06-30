@@ -1,7 +1,8 @@
 .bannerContainer {
   position: relative;
-  animation: bannerAnimation 0.3s forwards;
   opacity: 0;
+  animation: bannerAnimation 0.3s forwards;
+  height: 736px;
 }
 
 @keyframes bannerAnimation {
@@ -36,7 +37,7 @@
 
 .title {
   color: var(--white);
-  font-size: 64px;
+  font-size: 6.4rem;
   font-family: Poppins;
   font-weight: 700;
   line-height: 110.2%;
@@ -45,7 +46,7 @@
 
 .text {
   color: var(--white);
-  font-size: 18px;
+  font-size: 1.8rem;
   font-family: Poppins;
   font-style: normal;
   font-weight: 400;
@@ -108,7 +109,7 @@
 .gifContainer {
   position: relative;
   width: 28rem;
-  height: 17.3rem;
+  height: 15.8rem;
   overflow: hidden;
   border-radius: 4px;
 }
@@ -120,7 +121,7 @@
 .thumb {
   position: absolute;
   top: 0;
-  height: 100%;
+  object-fit: cover;
   transition: 0.3s;
 }
 
@@ -153,4 +154,63 @@
 
 .play img {
   width: 1.57rem;
+  margin-left: 4px;
+}
+
+@media (max-width: 1140px) {
+  .bannerInfos {
+    margin: 0 10rem 0 8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bannerInfos {
+    margin-left: 8rem;
+  }
+
+  .bannerExtraInfos {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .bannerContainer {
+    height: 625px;
+  }
+
+  .banner {
+    padding-top: 7.7rem !important;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .banner ul {
+    display: flex;
+    justify-content: flex-start;
+    order: 1;
+    margin-top: 4.8rem;
+  }
+
+  .banner ul li {
+    padding: 0;
+  }
+
+  .banner ul li + li {
+    margin-left: 1.6rem;
+  }
+
+  .title {
+    font-size: 4.8rem;
+  }
+
+  .bannerInfos {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 4rem;
+  }
 }

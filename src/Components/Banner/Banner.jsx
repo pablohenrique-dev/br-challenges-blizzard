@@ -84,7 +84,6 @@ const Banner = () => {
     background: `url('${banners[indexSlide].img}') no-repeat center center`,
     backgroundSize: "cover",
     width: "100%",
-    height: "736px",
     overflow: "hidden",
   };
 
@@ -148,8 +147,8 @@ const Banner = () => {
                 <p className={styles.text}>{banner.text}</p>
                 <ComponentButton
                   text={banner.button}
-                  hasFill={true}
                   icon={<Logar />}
+                  hasFill={true}
                   banner={true}
                 />
               </div>
@@ -160,12 +159,12 @@ const Banner = () => {
                   <img
                     className={styles.gif}
                     src={banner.trailer.gif}
-                    alt="Gif"
+                    alt={`Gif do jogo ${banner.name}`}
                   />
                   <img
                     className={styles.thumb}
                     src={banner.trailer.thumb}
-                    alt="Thumb gif"
+                    alt={`Thumb do gif ${banner.name}`}
                   />
                   <div className={styles.play}>
                     <img src={buttonPlay} alt="" />
