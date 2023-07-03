@@ -1,0 +1,91 @@
+div.MenuJogosExclusivos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8.5rem;
+  margin-bottom: 8.5rem;
+  gap: 24.4rem;
+}
+
+.MenuJogosExclusivosLeft {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.MenuJogosExclusivosRight {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+}
+
+.MenuJogosExclusivosLeft > span {
+  color: #8f9199;
+  font-size: 1.5rem;
+  font-family: Poppins;
+  font-weight: 600;
+}
+
+.MenuJogosExclusivosRight > nav ul {
+  display: flex;
+}
+
+.MenuJogosExclusivosRight > nav ul li button,
+.MenuJogosExclusivosRight > nav ul li {
+  padding-bottom: 0;
+}
+
+.subtitle {
+  color: #fff;
+  font-size: 3.2rem;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 110.2%;
+}
+
+.Allgames {
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.Allgames svg {
+  width: 9px;
+  height: 10px;
+}
+
+@media (max-width: 1080px) {
+  div.MenuJogosExclusivos {
+    gap: 6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .MenuJogosExclusivosLeft {
+    display: block;
+  }
+
+  .MenuJogosExclusivosRight {
+    gap: 4rem;
+  }
+
+  .MenuJogosExclusivosLeft > span {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  div.MenuJogosExclusivos {
+    margin-top: 5.7rem;
+    margin-bottom: 5.7rem;
+  }
+
+  .MenuJogosExclusivosRight > nav {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 2.8rem;
+  }
+}
