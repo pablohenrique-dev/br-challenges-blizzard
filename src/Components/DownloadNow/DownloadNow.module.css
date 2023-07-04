@@ -2,12 +2,13 @@
   background: url("../../assets/background-section-download.jpg") no-repeat
     center center;
   overflow: hidden;
-  padding-top: 9.9rem;
-  padding-bottom: 13rem;
+  padding-top: 12rem;
+  padding-bottom: 15rem;
 }
 
 .downloadNowContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40rem 1fr;
   /* justify-content: space-between; */
 }
 
@@ -64,24 +65,106 @@
   text-decoration: underline;
 }
 
-.downloadNowLeft {
-  width: fit-content;
-}
-
 .downloadNowRight {
   position: relative;
-  width: 100%;
 }
 
 .dashboardImg {
   width: 105.3rem;
   position: absolute;
-  right: -16rem;
-  top: 0;
+  right: -20%;
+  animation: zigzag 8s ease-in-out infinite;
 }
+
 .popupDashboardImg {
   width: 56.3rem;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: -15%;
+  animation: zigzag2 8s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@media (max-width: 1440px) {
+  .downloadNowContainer {
+    grid-template-columns: 35rem 1fr;
+  }
+
+  .dashboardImg {
+    max-width: 105.3rem;
+    width: 120%;
+  }
+
+  .popupDashboardImg {
+    width: 100%;
+    max-width: 56.3rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .popupDashboardImg {
+    bottom: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionDownloadNow {
+    padding-top: 6.3rem;
+    padding-bottom: 34rem;
+  }
+
+  .downloadNowContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .popupDashboardImg,
+  .dashboardImg {
+    right: -8%;
+  }
+
+  .dashboardImg {
+    animation: zigzag900 10s ease-in-out infinite;
+  }
+  .popupDashboardImg {
+    animation: zigzag2900 8s ease-in-out infinite;
+  }
+}
+
+@keyframes zigzag {
+  0%,
+  100% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes zigzag900 {
+  0%,
+  100% {
+    transform: translateY(20%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+}
+
+@keyframes zigzag2 {
+  0%,
+  100% {
+    transform: translateY(20%);
+  }
+  50% {
+    transform: translateY(40%);
+  }
+}
+
+@keyframes zigzag2900 {
+  0%,
+  100% {
+    transform: translateY(60%);
+  }
+  50% {
+    transform: translateY(90%);
+  }
 }

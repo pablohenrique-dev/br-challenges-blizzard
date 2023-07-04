@@ -7,11 +7,34 @@ import BuyYourGames from "../Icons/BuyYourGames";
 import ComponentButton from "./../Button/ComponentButton";
 import Phone from "./../Icons/Phone";
 
+import Windows from "../Icons/Windows";
+import MacOs from "../Icons/Apple";
+import Linux from "../Icons/Linux";
+
 import battlenet from "../../assets/battlenet-logo.png";
 import dashboardImg from "../../assets/dashboard.png";
 import popupDashboardImg from "../../assets/popupDashboard.png";
 
 const DownloadNow = () => {
+  const [operationalSystem, setOperationalSystem] = React.useState("");
+  const [iconOs, setIconOs] = React.useState(null);
+
+  React.useEffect(() => {
+    const system = window.navigator.userAgent;
+    if (system.includes("Windows")) {
+      setOperationalSystem("Windows");
+      setIconOs(Windows);
+    }
+    if (system.includes("Mac")) {
+      setOperationalSystem("MacOs");
+      setIconOs(MacOs);
+    }
+    if (system.includes("Linux")) {
+      setOperationalSystem("Linux");
+      setIconOs(Linux);
+    }
+  }, []);
+
   return (
     <section className={styles.sectionDownloadNow}>
       <div className={`${styles.downloadNowContainer} container`}>
@@ -33,7 +56,16 @@ const DownloadNow = () => {
             </li>
           </ul>
 
-          <ComponentButton text="texto" hasFill={true} />
+          <ComponentButton
+            text={
+              operationalSystem
+                ? "Baixar para " + operationalSystem
+                : "Baixar agora"
+            }
+            icon={iconOs}
+            banner={true}
+            hasFill={true}
+          />
 
           <div className={styles.availableInMobile}>
             <Phone />

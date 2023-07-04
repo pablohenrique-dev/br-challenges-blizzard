@@ -5,6 +5,10 @@ ul.ListGamesContainer {
   margin-bottom: 10.73rem;
 }
 
+.gameContainer {
+  cursor: pointer;
+}
+
 .gameContainer:hover .gameCover {
   transform: scale(1.1);
 }
@@ -75,7 +79,9 @@ li.liGameFixed {
   flex-direction: column;
   border-radius: 4.3px;
   border: 1.613px solid #212428;
-  height: 41.3rem;
+  width: 100%;
+  cursor: pointer;
+  aspect-ratio: 180 / 248;
 }
 
 .liGameFixed > h3 {
