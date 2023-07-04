@@ -55,3 +55,14 @@ button {
 a {
   text-decoration: none;
 }
+
+.fadeRight {
+  transform: translateX(-20px);
+  animation: fadeRight 0.8s forwards;
+}
+
+@keyframes fadeRight {
+  to {
+    transform: translateX(0px);
+  }
+}

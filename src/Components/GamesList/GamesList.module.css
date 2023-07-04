@@ -67,7 +67,7 @@ ul.ListGamesContainer {
   opacity: 0.8;
 }
 
-.liGameFixed {
+li.liGameFixed {
   display: flex;
   gap: 3.6rem;
   align-items: center;
@@ -88,4 +88,41 @@ ul.ListGamesContainer {
 
 .liGameFixed > h3 svg {
   margin-right: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  ul.ListGamesContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  ul.ListGamesContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nameGame {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  ul.ListGamesContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  ul.ListGamesContainer {
+    gap: 3.2rem;
+  }
+
+  .gameImgCoverContainer {
+    margin-bottom: 0;
+  }
+
+  .nameCategory,
+  .nameGame {
+    display: none;
+  }
 }

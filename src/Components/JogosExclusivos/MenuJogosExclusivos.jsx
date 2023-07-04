@@ -6,6 +6,8 @@ import Blizzard from "../Icons/Blizzard";
 import Xbox from "../Icons/Xbox";
 import Allgames from "../Icons/AllGames";
 
+const IconsMenu = [Blizzard, Nintendo, Xbox, Playstation];
+
 const MenuJogosExclusivos = () => {
   return (
     <div className={`${styles.MenuJogosExclusivos} container`}>

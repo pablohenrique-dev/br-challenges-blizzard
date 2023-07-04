@@ -3,6 +3,7 @@ import styles from "./GamesList.module.css";
 import useFetch from "../../Hooks/useFetch";
 import Logo from "../Icons/Logo";
 import AllGames from "../Icons/AllGames";
+import Loader from "../Loader/Loader";
 
 const GamesList = () => {
   const { data, loading, error, request } = useFetch();
@@ -11,11 +12,11 @@ const GamesList = () => {
     request("https://api.brchallenges.com/api/blizzard/games");
     console.log(data);
   }, [request]);
-  if (loading) return <p>Carregando...</p>;
   if (error) return <p>{error}</p>;
+  if (loading) return <Loader />;
   if (data)
     return (
-      <ul className={`${styles.ListGamesContainer} container`}>
+      <ul className={`${styles.ListGamesContainer} container fadeRight`}>
         {data.map((game) => {
           return (
             <li key={game.name} className={styles.gameContainer}>
