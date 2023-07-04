@@ -3,6 +3,7 @@ import Banner from "./Components/Banner/Banner";
 import Header from "./Components/Header/Header";
 import MenuJogosExclusivos from "./Components/JogosExclusivos/MenuJogosExclusivos";
 import GamesList from "./Components/GamesList/GamesList";
+import DownloadNow from "./Components/DownloadNow/DownloadNow";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Banner />
       <MenuJogosExclusivos />
       <GamesList />
+      <DownloadNow />
     </>
   );
 }

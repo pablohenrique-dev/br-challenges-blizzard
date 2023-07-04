@@ -10,7 +10,6 @@ const GamesList = () => {
 
   React.useEffect(() => {
     request("https://api.brchallenges.com/api/blizzard/games");
-    console.log(data);
   }, [request]);
   if (error) return <p>{error}</p>;
   if (loading) return <Loader />;

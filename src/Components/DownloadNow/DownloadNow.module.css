@@ -1,0 +1,87 @@
+.sectionDownloadNow {
+  background: url("../../assets/background-section-download.jpg") no-repeat
+    center center;
+  overflow: hidden;
+  padding-top: 9.9rem;
+  padding-bottom: 13rem;
+}
+
+.downloadNowContainer {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.hat {
+  width: 13.3rem;
+  margin-bottom: 3rem;
+}
+
+.title {
+  color: var(--white);
+  font-size: 3.2rem;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 110.2%;
+  margin-bottom: 3rem;
+}
+
+.characteristics {
+  margin-bottom: 4rem;
+}
+
+.characteristics li {
+  color: #828792;
+  font-size: 1.8rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 178.2%;
+}
+
+.characteristics li + li {
+  margin-top: 2.4rem;
+}
+
+.characteristics li svg {
+  margin-right: 1.6rem;
+}
+
+.availableInMobile {
+  margin-top: 4.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.availableInMobile p {
+  color: #e5e5e5;
+  font-size: 1.4rem;
+  font-family: Poppins;
+  font-weight: 600;
+  margin-left: 1.6rem;
+}
+
+.availableInMobile p span {
+  text-decoration: underline;
+}
+
+.downloadNowLeft {
+  width: fit-content;
+}
+
+.downloadNowRight {
+  position: relative;
+  width: 100%;
+}
+
+.dashboardImg {
+  width: 105.3rem;
+  position: absolute;
+  right: -16rem;
+  top: 0;
+}
+.popupDashboardImg {
+  width: 56.3rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
