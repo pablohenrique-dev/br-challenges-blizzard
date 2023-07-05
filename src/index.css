@@ -13,6 +13,7 @@
 :root {
   --white: #ffffff;
   --blue: #00aeff;
+  --blue-hover: #0195e4;
   --neutral-300: #15171b;
 }
 
@@ -59,6 +60,26 @@ a {
 .fadeRight {
   transform: translateX(-20px);
   animation: fadeRight 0.8s forwards;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--neutral-300);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-hover);
 }
 
 @keyframes fadeRight {
