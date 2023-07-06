@@ -8,7 +8,7 @@ import ComponentButton from "./../Button/ComponentButton";
 import Phone from "./../Icons/Phone";
 
 import Windows from "../Icons/Windows";
-import MacOs from "../Icons/Apple";
+import MacOs from "../Icons/Mac";
 import Linux from "../Icons/Linux";
 
 import battlenet from "../../assets/battlenet-logo.png";

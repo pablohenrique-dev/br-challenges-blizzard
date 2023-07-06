@@ -5,6 +5,7 @@ import ComponentButton from "../Button/ComponentButton";
 import Logar from "../Icons/Logar";
 import Arrow from "../Icons/Arrow";
 import MenuModal from "../MenuModal/MenuModal";
+import LoginModal from "../LoginModal/LoginModal";
 
 const Header = () => {
   const [activeModal, setActiveModal] = React.useState(false);
@@ -14,6 +15,7 @@ const Header = () => {
     jogos: 0,
     esportes: 0,
   });
+  const [openLoginModal, setOpenLoginModal] = React.useState(false);
 
   const handleClick = (e) => {
     let liClassName = e.currentTarget.className.trim();
@@ -72,6 +74,10 @@ const Header = () => {
 
   return (
     <header className={styles.headerContainer}>
+      <LoginModal
+        setOpenLoginModal={setOpenLoginModal}
+        openLoginModal={openLoginModal}
+      />
       <div className={`${styles.header} container`}>
         <div className={styles.leftHeader}>
           <a href="#" className={styles.logo}>
@@ -117,7 +123,12 @@ const Header = () => {
         <div className={styles.rightHeader}>
           <div className={styles.btnContainer}>
             <ComponentButton text="Criar conta" />
-            <ComponentButton text="Logar" icon={<Logar />} hasFill={true} />
+            <ComponentButton
+              setOpenLoginModal={setOpenLoginModal}
+              text="Logar"
+              icon={<Logar />}
+              hasFill={true}
+            />
           </div>
 
           <button className={`${styles.hamburguerBtn}`}>

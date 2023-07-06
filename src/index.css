@@ -13,14 +13,9 @@
 :root {
   --white: #ffffff;
   --blue: #00aeff;
-  --blue-hover: #0195e4;
+  --blue-hover: #148eff;
   --neutral-300: #15171b;
 }
-
-/* img {
-  display: block;
-  width: 100%;
-} */
 
 html {
   font-size: 62.5%;

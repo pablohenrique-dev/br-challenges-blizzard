@@ -1,0 +1,163 @@
+.containerLoginModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #020203d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.containerLoginModalClosed {
+  display: none;
+}
+
+.loginModal {
+  width: 100%;
+  max-width: 69.6rem;
+  background: #020203 url("../../assets/bg-loginModal.png") no-repeat center
+    center;
+  padding: 6.2rem 2rem;
+  border-radius: 4px;
+  position: relative;
+  animation: appear 0.5s forwards;
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.loginModalContent {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 42.6rem;
+}
+
+.logo {
+  width: 16.6rem;
+  margin-bottom: 4rem;
+}
+
+.loginModalContent input {
+  width: 100%;
+  height: 4.8rem;
+  border-radius: 4px;
+  padding-left: 1.6rem;
+  border: none;
+}
+
+.loginModalContent input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.loginModalContent input + input {
+  margin-top: 1.6rem;
+}
+
+.loginModalContent input + button {
+  width: 100%;
+  height: 5.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.4rem;
+  margin-bottom: 4rem;
+}
+
+.titleConnection {
+  color: var(--white);
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Poppins;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.containerCloseModal {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
+}
+
+.closeModal {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  position: relative;
+}
+
+.closeModal div {
+  width: 22px;
+  height: 2px;
+}
+
+.closeModalFirstDiv {
+  position: absolute;
+  right: 6px;
+  transform: rotate(0deg);
+  background: var(--blue-hover);
+  opacity: 0;
+  animation: closeMenuFirstX 0.5s 0.2s forwards;
+}
+
+.closeModalSecondDiv {
+  right: 6px;
+  position: absolute;
+  transform: rotate(0deg);
+  background: var(--blue);
+  opacity: 0;
+  animation: closeMenuSecondX 0.5s 0.2s forwards;
+}
+
+.containerButtonPlatforms {
+  margin-bottom: 3.6rem;
+}
+
+.containerButtonPlatforms button {
+  background: var(--white);
+  padding: 1rem 1.3rem;
+  border-radius: 4px;
+}
+
+.containerButtonPlatforms button + button {
+  margin-left: 1.6rem;
+}
+
+.loginModal p {
+  font-family: Poppins;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.loginModal a {
+  color: var(--blue);
+  font-family: Poppins;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+@keyframes closeMenuFirstX {
+  to {
+    transform: rotate(45deg);
+    opacity: initial;
+  }
+}
+@keyframes closeMenuSecondX {
+  to {
+    opacity: initial;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes appear {
+  to {
+    transform: translateX(0px);
+    opacity: initial;
+  }
+}
