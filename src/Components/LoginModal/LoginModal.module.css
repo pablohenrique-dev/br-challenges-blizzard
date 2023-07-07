@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 
 .containerLoginModalClosed {
@@ -47,6 +48,7 @@
   border-radius: 4px;
   padding-left: 1.6rem;
   border: none;
+  color: var(--neutral-300);
 }
 
 .loginModalContent input:focus {
