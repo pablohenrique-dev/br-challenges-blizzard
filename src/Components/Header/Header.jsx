@@ -24,51 +24,33 @@ const Header = () => {
     setNameContentModal(onlyFirstLiClassName);
 
     if (activeModal) {
-      switch (onlyFirstLiClassName) {
-        case "jogos":
-          aux.jogos++;
-          if (aux.esportes > 0) {
-            aux.esportes--;
-          }
-          setNameModal(liClassName);
-          if (aux.jogos > 1) {
-            setActiveModal(!activeModal);
-            aux.jogos = 0;
-          }
-          break;
+      if (onlyFirstLiClassName === "jogos") {
+        aux.jogos++;
+        if (aux.esportes > 0) {
+          aux.esportes--;
+        }
+      } else if (onlyFirstLiClassName === "esportes") {
+        aux.esportes++;
+        if (aux.jogos > 0) {
+          aux.jogos--;
+        }
+      }
 
-        case "esportes":
-          aux.esportes++;
-          if (aux.jogos > 0) {
-            aux.jogos--;
-          }
-          setNameModal(liClassName);
-          if (aux.esportes > 1) {
-            setActiveModal(!activeModal);
-            aux.esportes = 0;
-          }
-          break;
-
-        default:
-          break;
+      setNameModal(liClassName);
+      if (aux.jogos > 1 || aux.esportes > 1) {
+        setActiveModal(!activeModal);
+        aux.jogos = 0;
+        aux.esportes = 0;
       }
     } else {
-      switch (onlyFirstLiClassName) {
-        case "jogos":
-          aux.jogos++;
-          setActiveModal(!activeModal);
-          setNameModal(liClassName);
-          break;
-
-        case "esportes":
-          aux.esportes++;
-          setActiveModal(!activeModal);
-          setNameModal(liClassName);
-          break;
-
-        default:
-          break;
+      if (onlyFirstLiClassName === "jogos") {
+        aux.jogos++;
+      } else if (onlyFirstLiClassName === "esportes") {
+        aux.esportes++;
       }
+
+      setActiveModal(!activeModal);
+      setNameModal(liClassName);
     }
   };
 
