@@ -125,6 +125,16 @@
   border-radius: 4px;
 }
 
+.containerButtonPlatforms button svg {
+  margin-bottom: -3px;
+  margin-top: 3px;
+}
+
+.containerButtonPlatforms button:nth-child(3) svg {
+  margin-bottom: -3px;
+  margin-top: 1px;
+}
+
 .containerButtonPlatforms button + button {
   margin-left: 1.6rem;
 }

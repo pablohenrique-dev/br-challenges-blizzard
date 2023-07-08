@@ -57,6 +57,20 @@
   cursor: pointer;
 }
 
+@media (max-width: 1270px) {
+  .menuModalJogos .menuModal ul li {
+    padding: 3rem 3rem;
+    text-align: center;
+    width: 15rem;
+  }
+
+  .menuModalEsportes .menuModal ul li {
+    padding-bottom: 3.1rem;
+    text-align: center;
+    width: 15rem;
+  }
+}
+
 .menuModalEsportes .menuModal ul li {
   padding-bottom: 3.1rem;
   text-align: center;
